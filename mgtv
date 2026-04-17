@@ -1,7 +1,14 @@
 #!name=芒果TV（增强）
 #!desc=解锁VIP会员、移除开屏广告、弹窗广告、以及部分界面广告，基于圈X脚本格式按Loon原生语法转换。
-#!author=原gege，yanmaio修改整理
+#!author=原Weigiegie，@yanmaio修改整理
 #!homepage=https://t.me/GieGie777
+#!tag=工具,yanmiao
+#!system_version=17
+#!loon_version=3.3.9(945)
+
+
+使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
+*******************************
 
 [URL Rewrite]
 # 移除部分弹窗广告
