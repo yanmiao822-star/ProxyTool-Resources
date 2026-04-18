@@ -1,0 +1,22 @@
+#!name=Fuck Telegram bad IPs
+#!desc=将 tg 的垃圾 IP 转移到好的 IP 上
+#!category=⚙️ ▸ Function
+#!author=Repcz
+#!homepage=https://github.com/Repcz/Tool
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+
+[General]
+# Loon 不支持 use-local-host-item-for-proxy，请确保 Telegram 流量走代理
+# 该插件通过 [Host] 区块重定向垃圾 IP，代理策略需在配置文件中单独设置
+
+[Host]
+# Fuck Telegram bad ips
+91.108.56.100 = 91.108.56.147
+91.108.56.101 = 91.108.56.147
+91.108.56.104 = 91.108.56.147
+91.108.56.107 = 91.108.56.147
+91.108.56.120 = 91.108.56.147
+91.108.56.125 = 91.108.56.147
+91.108.56.126 = 91.108.56.147
+91.108.56.128 = 91.108.56.147
+91.108.56.156 = 91.108.56.147
