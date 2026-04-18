@@ -1,5 +1,5 @@
 #!name=SpotifyVIP
-#!desc=解锁部分Premium,去除播放广告,歌手/专辑列表正常展示,去除随机播放，使用步骤：✅登录后再打开脚本,重启app等待脚本生效（音质不能设置为超高）
+#!desc=解锁部分Premium,去除播放广告,歌手/专辑列表正常展示,去除随机播放，使用步骤：✅登录后再打开脚本,重启app等待脚本生效（音质不能设置为超高）；软件版本需要低于9.1.14
 #!author=app2smile,overtrees修改整理
 #!homepage=https://github.com/app2smile/rules
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
