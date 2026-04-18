@@ -1,0 +1,22 @@
+#!name=中国广电去广告@ddgksf2013 全面净化
+#!desc=移除中国广电App开屏、弹窗、信息流等各类广告。
+#!author=ddgksf2013 overtrees修改整理
+#!homepage=https://ddgksf2013.top
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Radio.png
+
+[Rewrite]
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/launchAdv url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/popupAdv url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/screenAdv url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/homepage\/ad url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/detail\/ad url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/player\/ad url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/list\/ad url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/mine\/ad url reject
+^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/search\/ad url reject
+
+[Script]
+http-response ^https?:\/\/ottservice\.cable-plus\.cn\/cable-plus-user-service\/biz\/v\d+\/(homepage|detail|player|list|mine|search)\/recommend script-path=https://ddgksf2013.top/Scripts/ChinaBroadAds.js, requires-body=true, tag=中国广电_推荐流净化
+
+[MITM]
+hostname = %APPEND% ottservice.cable-plus.cn
