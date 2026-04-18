@@ -10,24 +10,104 @@
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
 *******************************
 
-#!name=网易云音乐净化[墨鱼版]
-#!desc=净化网易云音乐，包括底部Tab、发现页、搜索页、广告推广、侧边栏等区域。
-#!author=@ddgksf2013
-#!homepage=https://t.me/ddgksf2021
-#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
-
 [Rewrite]
-# > 拦截活动推广、优惠券等
+# ======= 网易云框架区 ======= #
+# 底部Tab
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 发现页
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 首推荐页
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 软件更新
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+
+# ======= 网易云搜索区 ======= #
+# 搜索默认填词
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 猜你喜欢
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 搜索下方Chart
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 搜索Chart
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 相关搜索
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 特殊词
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+
+# ======= 网易云推广区 ======= #
+# 广告加载
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 广告实时
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 广告Get
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 插入广告
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 歌单顶部广告
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 活动推广
 ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/content\/activity\/music\/jar\/template\/list url reject-200
+# 弹窗免费听歌
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 启动领VIP弹窗
 ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/sp\/flow\/popup\/query url reject-200
+
+# ======= 网易云侧栏区 ======= #
+# 侧栏账户
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 侧栏推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 侧边VIP推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 侧边浮层
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 优惠券
 ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipmall\/couponcfg\/get url reject-200
+# 侧边兑换黑胶Tips
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 侧边创作福利
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+
+# ======= 网易云歌曲区 ======= #
+# 评论区插入推广
+^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch url script-response-body https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js
+# 活动推广
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?eapi\/(resource-exposure\/)?activity url reject-200
+# 评论区插入推广
 ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/comment\/feed\/inserted\/resources url reject-200
+# 购买实体专辑
 ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/resource-exposure\/config url reject-200
 
 [Script]
-# > 网易云音乐净化通用处理脚本
-http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/(link\/(home\/framework\/tab|page\/(discovery|rcmd)\/resource\/show)|ios\/upgrade\/get|search\/(default\/keyword\/list|rcmd\/keyword\/get|chart\/(list|detail)|suggest\/keyword\/get|specialkeyword\/get)|ad\/(loading\/(get|current)|get)|link\/(position|scene)\/show\/resource|vip\/cashier\/tspopup\/get|vipnewcenter\/app\/resource\/newaccountpage|side-bar\/mini-program\/music-service\/account|delivery\/(batch-)?deliver|yunbei\/account\/entrance\/get|creator\/musician\/reminder\/message\/get|batch) script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=网易云音乐净化
+# 框架区
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/home\/framework\/tab script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_底部Tab
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_发现页
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/page\/rcmd\/resource\/show script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_首推荐页
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ios\/upgrade\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_软件更新
+# 搜索区
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/default\/keyword\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_搜索默认填词
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/rcmd\/keyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_猜你喜欢
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/list script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_搜索Chart列表
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/chart\/detail script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_搜索Chart详情
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/suggest\/keyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_相关搜索
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/search\/specialkeyword\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_特殊词
+# 推广区
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_广告加载
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/loading\/current script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_广告实时
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/ad\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_广告Get
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/position\/show\/resource script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_插入广告
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/link\/scene\/show\/resource script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_歌单顶部广告
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_弹窗免费听歌
+# 侧栏区
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/vipnewcenter\/app\/resource\/newaccountpage script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧栏账户
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/side-bar\/mini-program\/music-service\/account script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧栏推广
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/deliver script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧边VIP推广
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/delivery\/batch-deliver script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧边浮层
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/yunbei\/account\/entrance\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧边兑换黑胶Tips
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/musician\/reminder\/message\/get script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_侧边创作福利
+# 歌曲区
+http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js,requires-body=true,tag=网易云_评论区插入推广
 
 [MITM]
-hostname = %APPEND% interface*.music.163.com
+hostname = interface*.music.163.com
