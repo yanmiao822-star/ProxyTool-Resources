@@ -1,0 +1,20 @@
+#!name=SpotifyVIP
+#!desc=解锁部分Premium,去除播放广告,歌手/专辑列表正常展示,去除随机播放，使用步骤：✅登录后再打开脚本,重启app等待脚本生效（音质不能设置为超高）
+#!author=app2smile,overtrees修改整理
+#!homepage=作者库：https://github.com/app2smile/rules
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+#!tag=工具,OverTrees
+#!system_version=17
+#!loon_version=3.3.9(945)
+
+
+使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
+*******************************
+
+[Script]
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-qx-header.js, requires-body=true, tag=Spotify_请求头处理
+http-response ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, tag=Spotify_响应体处理
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, requires-body=true, tag=Spotify_歌手专辑处理
+
+[MITM]
+hostname = %APPEND% spclient.wg.spotify.com, *spclient.spotify.com
