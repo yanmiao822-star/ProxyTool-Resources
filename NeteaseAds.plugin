@@ -44,4 +44,4 @@ http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/creator\/music
 http-response ^https?:\/\/interface(\d)?\.music\.163\.com\/e?api\/batch script-path=https://gist.githubusercontent.com/ddgksf2013/4f53b7c6083678df25fecc8ff68b52c4/raw/netease.adblock.js, requires-body=true, tag=网易云音乐_评论区插入推广净化
 
 [MITM]
-hostname = %APPEND% interface*.music.163.com
+hostname = %APPEND% *.music.163.com, *.126.net, *.netease.com
